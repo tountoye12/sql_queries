@@ -96,6 +96,65 @@ from
  where province_id = 'NS';
 
 
+/*
+Write a query to find the first_name, last_name and 
+birth_ate of patients who has 
+height greater than 160 and weight greater than 70
+*/
+
+select p.first_name, p.last_name, p.birth_date 
+from
+patients p
+where p.height > 160 and p.weight > 70;
+
+/*
+Write a query to find the first_name, last_name and 
+birth_ate of patients who has 
+height greater than 160 and weight greater than 70
+*/
+
+select p.first_name, p.last_name, p.allergies 
+from
+patients p
+where p.allergies is not null and city = 'Hamilton';
+	
+
+/*
+Show unique birth years from patients and order them by ascending.
+*/
+
+select distinct year(p.birth_date) as birt
+from
+patients p
+order by birt;
+
+/*
+Show unique birth years from patients and order them by ascending.
+*/
+
+select  p.first_name
+from
+patients p
+
+group by p.first_name
+
+having count(p.first_name) = 1;
+
+/*
+Show patient_id and first_name from patients 
+where their first_name start 
+and ends with 's' and is at least 6 characters long.
+
+*/
+
+select  p.patient_id, p.first_name
+from
+patients p
+where p.first_name like 's%s' 
+and len(p.first_name) >= 6
+;
+
+
 
 
 
