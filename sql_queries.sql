@@ -66,6 +66,35 @@ Show the total number of admissions
 select count(*) total from
 admissions;
 
+/*
+Show all the columns from admissions where the patient 
+was admitted and discharged on the same day.
+*/
+
+select * 
+from admissions a 
+where a.admission_date = a.discharge_date;
+
+
+/*
+Show the patient id and the total number 
+of admissions for patient_id 579.
+*/
+
+select patient_id, count(patient_id) as total_admissions
+from admissions
+where patient_id = 579;
+
+/*
+Based on the cities that our patients live in, 
+show unique cities that are in province_id 'NS'?
+*/
+
+select distinct city 
+from
+ patients
+ where province_id = 'NS';
+
 
 
 
